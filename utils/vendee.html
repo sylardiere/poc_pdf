@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test HTML vers PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        .border-image-top,
+        .border-image-bottom {
+            width: 100%;
+            height: 50px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Vend%C3%A9e.svg/1200px-Flag_of_Vend%C3%A9e.svg.png');
+            background-repeat: repeat-x;
+            background-size: auto 50px;
+            position: fixed;
+        }
+        .border-image-bottom {
+            bottom: 0;
+        }
+        .border-image-left,
+        .border-image-right {
+            height: 100%;
+            width: 60px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Vend%C3%A9e.svg/1200px-Flag_of_Vend%C3%A9e.svg.png');
+            background-repeat: repeat-y;
+            background-size: 60px auto;
+            position: fixed;
+            top: 0;
+        }
+        .border-image-right{
+            right: 0;
+        }
+        .border-image-top,
+        .border-image-bottom,
+        .border-image-left,
+        .border-image-right {
+            z-index: -1; /* Met les bordures en arrière-plan */
+        }
+        .container {
+            position: relative;
+            padding: 50px 60px; /* Ajuste le padding pour tenir compte des bordures */
+        }
+        .header {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            position: relative;
+            z-index: 1; /* Met le contenu en premier plan */
+        }
+        .subtitle {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .paragraph {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-image-top"></div>
+    <div class="border-image-bottom"></div>
+    <div class="border-image-left"></div>
+    <div class="border-image-right"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Vendée, département magnifique</h1>
+            <div class="subtitle">La Vendée :</div>
+        </div>
+        <div class="paragraph">
+            <p>Les spécialités vendéennes :</p>
+            <p>Déjà merci pour le préfou en apéro, ça passe toujours crème. Et puis après il y a la pomme de terre de Noirmout’, la mogette, les sardines de St-Gilles, le jambon vendéen, la gâche vendéenne, et même le fion. Oui oui le fion. Un repas plus ou moins équilibré, mais plutôt moins que plus.</p>
+            <p>La Départementale 148 :</p>
+            <p>Celle qui rejoint Sainte-Hermine à Fontenay-le-Comte. Une route qui possède beaucoup de charme. J’y ai fait quelques belles rencontres, comme un auto-stoppeur que je n’ai pas pris, un fossé, et un réverbère.</p>
+        </div>
+    </div>
+</body>
+</html>
