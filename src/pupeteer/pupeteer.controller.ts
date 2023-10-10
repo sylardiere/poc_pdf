@@ -25,11 +25,12 @@ export class PupeteerController {
         @UploadedFile() htmlFile: Express.Multer.File,
         @Res() res
     ){
+        console.log(htmlFile)
         console.time('executionTime');
         const pdfFilePath = '/tmp/pdf_test.pdf';
         const browser = await puppeteer.launch({headless: 'new'});
         const page = await browser.newPage();
-        const pathToFile = path.join(htmlFile.destination, htmlFile.filename);
+        const pathToFile = path.join(htmlFile.path);
 
         await page.goto(`file://${pathToFile}`, { waitUntil: 'networkidle2' });
         const pdfBuffer = await page.pdf({ format: 'A4', printBackground: true });
